@@ -42,3 +42,19 @@ export function deleteNote(req, res) {
     });
   });
 }
+
+export function editNote(req, res) {
+  if (!req.body.task) {
+    res.status(400).end();
+  }
+
+  Note.findOneAndUpdate({ id: req.params.noteId },
+    { $set: { task: req.body.task }},
+    { new: true },
+    (err, note) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.json({ note });
+    });
+}
