@@ -1,0 +1,193 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "43a1c78c-eeb9-4eb4-b7f8-e264b4161eac",
+			"name": "mod-23-kanban",
+			"description": null,
+			"auth": null,
+			"events": null,
+			"variables": null,
+			"order": [
+				"452509c8-d4b0-426b-8dae-660e8e5530fe",
+				"94185e9d-3ed8-4c86-b9c0-6f08c157d9a8",
+				"238485b1-b0fe-43bd-8b2c-68322a5ff331",
+				"97ad57ee-4f0e-4460-97ce-1d1489e406a4",
+				"dde51cb8-9286-4619-87bc-50fa6dbe775e",
+				"933b0514-1bd9-484d-a919-cb56255abe7c",
+				"f49b0f06-d9c5-4ac2-ac92-91bf8e466eb7"
+			],
+			"folders_order": [],
+			"folders": [],
+			"requests": [
+				{
+					"id": "238485b1-b0fe-43bd-8b2c-68322a5ff331",
+					"name": "rename Lane",
+					"url": "localhost:8000/api/lanes/03598161-a577-46af-a233-40ff9d8d7c49",
+					"description": "",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "43a1c78c-eeb9-4eb4-b7f8-e264b4161eac",
+					"rawModeData": "{\n\t\"name\": \"renamed test\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "452509c8-d4b0-426b-8dae-660e8e5530fe",
+					"name": "get Lanes",
+					"url": "localhost:8000/api/lanes",
+					"description": "",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "43a1c78c-eeb9-4eb4-b7f8-e264b4161eac",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "933b0514-1bd9-484d-a919-cb56255abe7c",
+					"name": "edit Note",
+					"url": "localhost:8000/api/notes/fa4a32b5-b96f-4b71-a24a-d7ec407919d6",
+					"description": "",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "43a1c78c-eeb9-4eb4-b7f8-e264b4161eac",
+					"rawModeData": "{\n\t\"task\": \"renamed test note no.42\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "94185e9d-3ed8-4c86-b9c0-6f08c157d9a8",
+					"name": "add Lane",
+					"url": "localhost:8000/api/lanes",
+					"description": "",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "43a1c78c-eeb9-4eb4-b7f8-e264b4161eac",
+					"rawModeData": "{\n\t\"name\": \"test2\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "97ad57ee-4f0e-4460-97ce-1d1489e406a4",
+					"name": "delete Lane",
+					"url": "localhost:8000/api/lanes/c4f4b667-4263-41ee-ab86-538ac789e338",
+					"description": "",
+					"data": [],
+					"dataMode": "params",
+					"headerData": [],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "43a1c78c-eeb9-4eb4-b7f8-e264b4161eac",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "dde51cb8-9286-4619-87bc-50fa6dbe775e",
+					"name": "add Note",
+					"url": "localhost:8000/api/notes",
+					"description": "",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "43a1c78c-eeb9-4eb4-b7f8-e264b4161eac",
+					"rawModeData": "{\n\t\"note\": {\n\t\t\"task\": \"test note no.42\"\n\t},\n\t\"laneId\": \"03598161-a577-46af-a233-40ff9d8d7c49\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "f49b0f06-d9c5-4ac2-ac92-91bf8e466eb7",
+					"name": "delete Note",
+					"url": "localhost:8000/api/notes/a4a8b9b1-fd19-4d5f-a826-6b6512bf6a8b",
+					"description": "",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "43a1c78c-eeb9-4eb4-b7f8-e264b4161eac",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [],
+	"headerPresets": [],
+	"globals": []
+}
