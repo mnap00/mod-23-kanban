@@ -39,3 +39,19 @@ export function deleteLane(req, res) {
     });
   });
 }
+
+export function renameLane(req, res) {
+  if (!req.body.name) {
+    res.status(400).end();
+  }
+
+  Lane.findOneAndUpdate({ id: req.params.laneId },
+    { $set: { name: req.body.name }},
+    { new: true },
+    (err, lane) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.json({ lane });
+    });
+}
