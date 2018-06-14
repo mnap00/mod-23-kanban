@@ -32,10 +32,22 @@ export function addNote(req, res) {
 }
 
 export function deleteNote(req, res) {
+  const { laneId } = req.body;
+
+  if (!laneId) {
+    res.status(400).end();
+  }
+
   Note.findOne({ id: req.params.noteId }).exec((err, note) => {
     if (err) {
       res.status(500).send(err);
     }
+
+    Lane.findOne({ id: laneId })
+      .then(lane => {
+        lane.notes.filter(doc => doc.id !== note.id);
+        return lane.save();
+      });
 
     note.remove(() => {
       res.status(200).end();
@@ -49,7 +61,7 @@ export function editNote(req, res) {
   }
 
   Note.findOneAndUpdate({ id: req.params.noteId },
-    { $set: { task: req.body.task }},
+    { $set: { task: req.body.task } },
     { new: true },
     (err, note) => {
       if (err) {
