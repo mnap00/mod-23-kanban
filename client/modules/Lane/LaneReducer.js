@@ -1,5 +1,5 @@
 // Import Actions
-import { CREATE_LANE, UPDATE_LANE, DELETE_LANE } from './LaneActions';
+import { CREATE_LANE, UPDATE_LANE, DELETE_LANE, EDIT_LANE } from './LaneActions';
 import { CREATE_NOTE, DELETE_NOTE } from '../Note/NoteActions';
 
 // Initial State
@@ -18,6 +18,11 @@ const LaneReducer = (state = initialState, action) => {
 
     case DELETE_LANE:
       return state.filter(lane => lane.id !== action.laneId);
+
+    case EDIT_LANE:
+      return state.map(lane => {
+        return lane.id === action.laneId ? { ...lane, editing: true } : lane;
+      });
 
     case CREATE_NOTE:
       return state.map(lane => {
