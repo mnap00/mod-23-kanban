@@ -1,1 +1,27 @@
 /* Lane styles */
+.Lane {
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: flex;
+  width: 250px;
+}
+
+.LaneHeader {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
+}
+
+.LaneHeader h4 {
+  width: 100%;
+}
+
+.LaneDelete {
+  border: 1px solid #000;
+}
+
+.LaneAddNote {
+  border: 1px solid #000;
+}
