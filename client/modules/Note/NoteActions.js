@@ -31,3 +31,10 @@ export function deleteNote(noteId, laneId) {
     laneId,
   };
 }
+
+export function editNote(noteId) {
+  return {
+    type: EDIT_LANE,
+    noteId,
+  };
+}

@@ -1,5 +1,5 @@
 // Import Actions
-import { CREATE_NOTE, UPDATE_NOTE, DELETE_NOTE } from './NoteActions';
+import { CREATE_NOTE, UPDATE_NOTE, DELETE_NOTE, EDIT_NOTE } from './NoteActions';
 
 // Initial State
 const initialState = [];
@@ -17,6 +17,11 @@ const NoteReducer = (state = initialState, action) => {
 
     case DELETE_NOTE:
       return state.filter(note => note.id !== action.noteId);
+
+    case EDIT_NOTE:
+      return state.map(note => {
+        return note.id === action.noteId ? { ...note, editing: true } : note;
+      });
 
     default:
       return state;
