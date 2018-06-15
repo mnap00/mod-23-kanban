@@ -45,7 +45,7 @@ export function deleteNote(req, res) {
 
     Lane.findOne({ id: laneId })
       .then(lane => {
-        lane.notes.filter(doc => doc.id !== note.id);
+        lane.notes.filter(doc => doc._id !== note._id);
         return lane.save();
       });
 
