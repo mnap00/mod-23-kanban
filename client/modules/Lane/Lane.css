@@ -20,8 +20,10 @@
 
 .LaneDelete {
   border: 1px solid #000;
+  border-radius: 5px;
 }
 
 .LaneAddNote {
   border: 1px solid #000;
+  border-radius: 5px;
 }
