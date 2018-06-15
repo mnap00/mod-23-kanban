@@ -20,7 +20,7 @@ const Kanban = (props) => (
     >
       Add Lane
     </button>
-    <Lanes lanes={props.lanes}></Lanes>
+    <Lanes lanes={props.lanes} />
   </div>
 );
 
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-    createLane,
+  createLane,
 };
 
 Kanban.propTypes = {

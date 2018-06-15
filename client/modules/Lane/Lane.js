@@ -28,8 +28,8 @@ const Lane = (props) => {
         laneId={laneId}
       />
     </div>
-  )
-}
+  );
+};
 
 Lane.propTypes = {
   lane: PropTypes.object,
