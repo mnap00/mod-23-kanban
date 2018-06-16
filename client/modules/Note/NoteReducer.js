@@ -24,7 +24,6 @@ const NoteReducer = (state = initialState, action) => {
 
     case DELETE_NOTE:
       return omit(state, action.noteId);
-      // return state.filter(note => note.id !== action.noteId);
 
     case EDIT_NOTE: {
       const note = { ...state[action.noteId], editing: true };

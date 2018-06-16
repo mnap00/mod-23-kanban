@@ -25,12 +25,6 @@ const LaneReducer = (state = initialState, action) => {
 
     case DELETE_LANE:
       return omit(state, action.laneId);
-      // possible lodash/omit replacement
-      // {
-      // const newLane = { ...state[action.laneId] };
-      // const { newLane, ...state } = state;
-      // return state;
-      // }
 
     case EDIT_LANE: {
       const lane = { ...state[action.laneId], editing: true };
