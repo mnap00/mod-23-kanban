@@ -27,7 +27,7 @@ const Kanban = (props) => (
 Kanban.need = [() => { return fetchLanes(); }];
 
 const mapStateToProps = (state) => ({
-  lanes: state.lanes,
+  lanes: Object.values(state.lanes),
 });
 
 const mapDispatchToProps = {
