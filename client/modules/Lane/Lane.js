@@ -6,10 +6,18 @@ import Edit from '../../components/Edit';
 import styles from './Lane.css';
 
 const Lane = (props) => {
-  const { lane, laneNotes, editLane, updateLane, addNote, deleteLane } = props;
+  const {
+    connectDropTarget,
+    lane,
+    laneNotes,
+    editLane,
+    addNote,
+    updateLane,
+    deleteLane,
+  } = props;
   const laneId = lane.id;
 
-  return (
+  return connectDropTarget(
     <div className={styles.Lane}>
       <div className={styles.LaneHeader}>
         <Edit
@@ -41,10 +49,10 @@ const Lane = (props) => {
 Lane.propTypes = {
   lane: PropTypes.object,
   laneNotes: PropTypes.array,
+  editLane: PropTypes.func,
   addNote: PropTypes.func,
   updateLane: PropTypes.func,
   deleteLane: PropTypes.func,
-  editLane: PropTypes.func,
 };
 
 export default Lane;
