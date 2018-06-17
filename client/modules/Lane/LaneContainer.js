@@ -4,7 +4,6 @@ import {
   deleteLane,
   updateLane,
   editLane,
-  createLaneRequest,
 } from './LaneActions';
 import { createNoteRequest } from '../Note/NoteActions';
 import Lane from './Lane';
@@ -18,7 +17,6 @@ const mapDispatchToProps = {
   deleteLane,
   updateLane,
   addNote: createNoteRequest,
-  createLane: createLaneRequest,
 };
 
 export default connect(
