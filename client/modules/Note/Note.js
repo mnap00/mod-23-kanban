@@ -11,7 +11,7 @@ class Note extends Component {
   render() {
     const {
       connectDragSource,
-      connecDropTarget,
+      connectDropTarget,
       isDragging,
       editing,
       children,
@@ -19,7 +19,7 @@ class Note extends Component {
     // no dragging when editing component
     const dragSource = editing ? a => a : connectDragSource;
 
-    return dragSource(connecDropTarget(
+    return dragSource(connectDropTarget(
       <li
         className={styles.Note}
         style={{ opacity: isDragging ? 0 : 1 }}
@@ -32,7 +32,7 @@ class Note extends Component {
 
 Note.propTypes = {
   connectDragSource: PropTypes.func,
-  connecDropTarget: PropTypes.func,
+  connectDropTarget: PropTypes.func,
   isDragging: PropTypes.bool,
   editing: PropTypes.bool,
   children: PropTypes.any,
