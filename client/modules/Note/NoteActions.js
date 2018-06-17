@@ -38,11 +38,27 @@ export function updateNote(note) {
   };
 }
 
+export function updateNoteRequest(note) {
+  return (dispatch) => {
+    return callApi(`notes/${note.id}`, 'put', { task: note.task }).then(() => {
+      dispatch(updateNote(note));
+    });
+  };
+}
+
 export function deleteNote(noteId, laneId) {
   return {
     type: DELETE_NOTE,
     noteId,
     laneId,
+  };
+}
+
+export function deleteNoteRequest(noteId, laneId) {
+  return (dispatch) => {
+    return callApi(`notes/${noteId}`, 'delete').then(() => {
+      dispatch(deleteNote(noteId, laneId));
+    });
   };
 }
 
