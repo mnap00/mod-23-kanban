@@ -67,5 +67,5 @@ export default compose(
   })),
   DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
     connecDropTarget: connect.dropTarget(),
-  })),
+  }))
 )(Note);

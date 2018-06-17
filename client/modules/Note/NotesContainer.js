@@ -9,9 +9,9 @@ import {
 import Notes from './Notes';
 
 const mapDispatchToProps = {
-  onValueClick: editNote,
-  onUpdate: updateNoteRequest,
-  onDelete: deleteNoteRequest,
+  editNote,
+  updateNote: updateNoteRequest,
+  deleteNote: deleteNoteRequest,
   moveWithinLane,
 };
 
