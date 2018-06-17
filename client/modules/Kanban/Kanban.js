@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 // Import actions
 import { createLaneRequest, fetchLanes } from '../Lane/LaneActions';
@@ -39,7 +42,7 @@ Kanban.propTypes = {
   createLane: PropTypes.func,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  DragDropContext(HTML5Backend)
 )(Kanban);
