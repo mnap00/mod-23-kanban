@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { DragSource } from 'react-dnd';
+import { compose } from 'redux';
+import { DragSource, DropTarget } from 'react-dnd';
 
 import ItemTypes from '../Kanban/itemTypes';
 
@@ -42,7 +43,22 @@ const noteSource = {
   },
 };
 
-export default DragSource(ItemTypes.NOTE, noteSource, (connect, monitor) => ({
-  connectDragSource: connect.dragSource(),
-  isDragging: monitor.isDragging(),
-}))(Note);
+const noteTarget = {
+  hover(targetProps, monitor) {
+    const sourceProps = monitor.getItem();
+    if (targetProps.id !== sourceProps.id) {
+      targetProps.moveWithinLane(
+        targetProps.laneId, targetProps.id, sourceProps.id);
+    }
+  },
+};
+
+export default compose(
+  DragSource(ItemTypes.NOTE, noteSource, (connect, monitor) => ({
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging(),
+  })),
+  DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
+    connecDropTarget: connect.dropTarget(),
+  })),
+)(Note);
