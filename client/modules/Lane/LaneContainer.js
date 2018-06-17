@@ -6,6 +6,7 @@ import {
   deleteLaneRequest,
   updateLaneRequest,
   editLane,
+  moveBetweenLanes,
 } from './LaneActions';
 import { createNoteRequest } from '../Note/NoteActions';
 import ItemTypes from '../Kanban/itemTypes';
@@ -31,10 +32,11 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = {
-  editLane,
   deleteLane: deleteLaneRequest,
   updateLane: updateLaneRequest,
   addNote: createNoteRequest,
+  editLane,
+  moveBetweenLanes,
 };
 
 export default compose(
