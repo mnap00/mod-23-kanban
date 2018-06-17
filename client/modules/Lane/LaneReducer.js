@@ -14,6 +14,14 @@ import {
 
 import omit from 'lodash/omit';
 
+function moveNotes(array, sourceNoteId, targetNoteId) {
+  const sourceIndex = array.indexOf(sourceNoteId);
+  const targetIndex = array.indexOf(targetNoteId);
+  const arrayCopy = [...array];
+  arrayCopy.splice(targetIndex, 0, arrayCopy.splice(sourceIndex, 1)[0]);
+  return arrayCopy;
+}
+
 // Initial State
 const initialState = {};
 
@@ -44,6 +52,13 @@ const LaneReducer = (state = initialState, action) => {
     case DELETE_NOTE: {
       const newLane = { ...state[action.laneId] };
       newLane.notes = newLane.notes.filter(noteId => noteId !== action.noteId);
+      return { ...state, [action.laneId]: newLane };
+    }
+
+    case MOVE_WITHIN_LANE: {
+      const newLane = { ...state[action.laneId] };
+      newLane.notes = moveNotes(
+        newLane.notes, action.sourceId, action.targetId);
       return { ...state, [action.laneId]: newLane };
     }
 
