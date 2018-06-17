@@ -5,6 +5,7 @@ import {
   UPDATE_LANE,
   DELETE_LANE,
   EDIT_LANE,
+  MOVE_BETWEEN_LANES,
 } from './LaneActions';
 import {
   CREATE_NOTE,
@@ -60,6 +61,19 @@ const LaneReducer = (state = initialState, action) => {
       newLane.notes = moveNotes(
         newLane.notes, action.sourceId, action.targetId);
       return { ...state, [action.laneId]: newLane };
+    }
+
+    case MOVE_BETWEEN_LANES: {
+      const targetLane = { ...state[action.targetLaneId] };
+      targetLane.notes = [...targetLane.notes, action.noteId];
+      const sourceLane = { ...state[action.sourceLaneId] };
+      sourceLane.notes = sourceLane.notes.filter(noteId =>
+        noteId !== action.noteId);
+      return {
+        ...state,
+        [action.targetLaneId]: targetLane,
+        [action.sourceLaneId]: sourceLane,
+      };
     }
 
     default:
