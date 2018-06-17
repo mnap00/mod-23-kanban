@@ -9,23 +9,30 @@ import styles from './Note.css';
 
 class Note extends Component {
   render() {
-    const { connectDragSource, isDragging, editing, children } = this.props;
+    const {
+      connectDragSource,
+      connecDropTarget,
+      isDragging,
+      editing,
+      children,
+    } = this.props;
     // no dragging when editing component
     const dragSource = editing ? a => a : connectDragSource;
 
-    return dragSource(
+    return dragSource(connecDropTarget(
       <li
         className={styles.Note}
         style={{ opacity: isDragging ? 0 : 1 }}
       >
         {children}
       </li>
-    );
+    ));
   }
 }
 
 Note.propTypes = {
   connectDragSource: PropTypes.func,
+  connecDropTarget: PropTypes.func,
   isDragging: PropTypes.bool,
   editing: PropTypes.bool,
   children: PropTypes.any,
