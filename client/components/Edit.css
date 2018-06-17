@@ -1,10 +1,16 @@
 .delete {
-  border: 1px solid #f00;
+  background-color: #f00;
   border-radius: 5px;
+  color: #fff;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
 }
 
 .value {
   background-color: #eee8aa;
-  border: 1px solid #5f9ea0;
   border-radius: 5px;
+  display: flex;
+  flex-grow: 1;
+  padding: 5px;
 }

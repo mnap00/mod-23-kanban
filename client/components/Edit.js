@@ -17,7 +17,7 @@ class Edit extends Component {
   renderDelete = () => {
     return (
       <button className={styles.delete} onClick={this.props.onDelete}>
-        x
+        X
       </button>
     );
   }

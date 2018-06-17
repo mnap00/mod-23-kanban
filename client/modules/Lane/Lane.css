@@ -3,27 +3,39 @@
   border: 1px solid #000;
   border-radius: 5px;
   display: flex;
-  width: 250px;
+  flex-direction: column;
+  margin: 5px;
+  max-width: 250px;
+  min-width: 250px;
+  padding: 0 5px;
 }
 
 .LaneHeader {
+  border-bottom: 1px dashed #000;
+  justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
-  margin: 5px;
-  padding: 5px;
+  margin-top: 5px;
   width: 100%;
 }
 
 .LaneName {
+  margin: 5px 0;
   width: 100%;
 }
 
 .LaneDelete {
-  border: 1px solid #000;
+  background-color: #f00;
   border-radius: 5px;
+  color: #fff;
+  margin: 5px 0;
+  padding: 5px;
 }
 
 .LaneAddNote {
-  border: 1px solid #000;
+  background-color: #006400;
   border-radius: 5px;
+  color: #fff;
+  margin: 5px 0;
+  padding: 5px;
 }
