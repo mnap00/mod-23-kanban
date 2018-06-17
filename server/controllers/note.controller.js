@@ -49,7 +49,7 @@ export function editNote(req, res) {
   }
 
   Note.findOneAndUpdate({ id: req.params.noteId },
-    { $set: { task: req.body.task }},
+    { $set: { task: req.body.task } },
     { new: true },
     (err, note) => {
       if (err) {

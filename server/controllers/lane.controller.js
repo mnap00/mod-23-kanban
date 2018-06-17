@@ -46,7 +46,7 @@ export function renameLane(req, res) {
   }
 
   Lane.findOneAndUpdate({ id: req.params.laneId },
-    { $set: { name: req.body.name }},
+    { $set: { name: req.body.name } },
     { new: true },
     (err, lane) => {
       if (err) {
