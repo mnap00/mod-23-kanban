@@ -40,6 +40,7 @@ export function createLane(lane) {
 }
 
 export function createLaneRequest(lane) {
+  console.log('create lane request');
   return (dispatch) => {
     return callApi('lanes', 'post', lane).then(res => {
       dispatch(createLane(res));
@@ -55,6 +56,7 @@ export function updateLane(lane) {
 }
 
 export function updateLaneRequest(lane) {
+  console.log('update lane request');
   return (dispatch) => {
     return callApi(`lanes/${lane.id}`, 'put', { name: lane.name }).then(() => {
       dispatch(updateLane(lane));
@@ -70,6 +72,7 @@ export function deleteLane(laneId) {
 }
 
 export function deleteLaneRequest(laneId) {
+  console.log('delete lane request');
   return (dispatch) => {
     return callApi(`lanes/${laneId}`, 'delete').then(() => {
       dispatch(deleteLane(laneId));
