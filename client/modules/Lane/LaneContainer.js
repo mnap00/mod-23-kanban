@@ -14,10 +14,21 @@ import ItemTypes from '../Kanban/itemTypes';
 import Lane from './Lane';
 
 const noteTarget = {
-  hover(targetProps, monitor) {
+  // hover(targetProps, monitor) {
+  //   const sourceProps = monitor.getItem();
+  //   const { id: noteId, laneId: sourceLaneId } = sourceProps;
+  //   if (!targetProps.lane.notes.length) {
+  //     targetProps.moveBetweenLanes(
+  //       targetProps.lane.id,
+  //       noteId,
+  //       sourceLaneId,
+  //     );
+  //   }
+  // },
+  drop(targetProps, monitor) {
     const sourceProps = monitor.getItem();
     const { id: noteId, laneId: sourceLaneId } = sourceProps;
-    if (!targetProps.lane.notes.length) {
+    if (targetProps.lane.id !== sourceLaneId) {
       targetProps.moveBetweenLanes(
         targetProps.lane.id,
         noteId,
