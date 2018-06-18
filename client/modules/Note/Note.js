@@ -66,6 +66,6 @@ export default compose(
     isDragging: monitor.isDragging(),
   })),
   DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
-    connecDropTarget: connect.dropTarget(),
+    connectDropTarget: connect.dropTarget(),
   }))
 )(Note);
